@@ -8,7 +8,7 @@ Before you submit the different parts of your lab, make sure that your project f
 
 ## 01 Git
 
-- [ ] Fork and clone the 1md034_students repository
+- [X] Fork and clone the 1md034_students repository
 
 
 ## 02 HTML
@@ -83,10 +83,10 @@ Add the following style/behaviour to your website (mostly in style.css but also 
 - [ ] Send the actual burgers with the order instead of Beans and Curry
 - [ ] Send the customer's information from your input fields with the order
 - [ ] Update the dispatcher view so that you see the following for every order:
-    - [ ] The order's location on the map
-    - [ ] The ordered burger(-s)
-    - [ ] The customer's information
-    
+	- [ ] The order's location on the map
+	- [ ] The ordered burger(-s)
+	- [ ] The customer's information
+	
 ## Optional
 - [ ] Set the orderID on the server side so that multiple customers can add orders
 - [ ] Only allow the order to be sent if all necessary information is provided
