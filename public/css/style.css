@@ -11,11 +11,16 @@ body {
 
 #burger_selection {
 	color: white;
-	background-color: black;	
+	background-color: black;
+	margin:10px 5px;
 }
 
 #contact_information {
+	margin:40px 10px;
+}
 
+[type|="submit"] {
+	margin:20px 20px;
 }
 
 button:hover {
