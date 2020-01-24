@@ -4,3 +4,7 @@ body {
 	font-family: Ubuntu, "Courier New";
 	font-size: 15pt
 }
+
+.allergy {
+	font-weight: bold;
+}
