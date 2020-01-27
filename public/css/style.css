@@ -5,6 +5,26 @@ body {
 	font-size: 15pt
 }
 
+header {
+	margin:10px 5px;
+	position:relative;
+	overflow:hidden;
+}
+
+.title {
+	color:black;
+	opacity:1;
+}
+
+header img {
+	opacity:0.5;
+	width:100%;
+}
+
+header img {
+	
+}
+
 .allergy {
 	font-weight: bold;
 }
