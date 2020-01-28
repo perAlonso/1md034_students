@@ -80,3 +80,65 @@ table tr img {
 	margin-right:auto;
 	width:60%
 }
+
+.burger-table {
+	width:100%;
+	height:85%;
+	margin-left:auto;
+	margin-right:auto;
+
+	display:grid;
+	grid-gap:10px;
+	grid-template-columns:32% 32% 32%;
+}
+
+.box {
+	border-radius:5px;
+	padding:20px;
+	width:100%;
+	position:relative;
+}
+
+.box img {
+	max-width:95%;
+	max-height:100%;
+}
+
+.00 {
+	grid-column:0;
+	grid-row:0;
+}
+.01 {
+	grid-column:1;
+	grid-row:0;
+}
+.02 {
+	grid-column:2;
+	grid-row:0;
+}
+
+.10 {
+	grid-column:0;
+	grid-row:1;
+}
+.11 {
+	grid-column:1;
+	grid-row:1;
+}
+.12 {
+	grid-column:2;
+	grid-row:1;
+}
+
+.20 {
+	grid-column:0;
+	grid-row:2;
+}
+.21 {
+	grid-column:1;
+	grid-row:2;
+}
+.22 {
+	grid-column:2;
+	grid-row:2;
+}
