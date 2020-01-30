@@ -9,7 +9,7 @@ function Burger(name, bread, meat, allergy, kCal, img_path, dsc1, dsc2, dsc3) {
 	this.dsc1 = dsc1;
 	this.dsc2 = dsc2;
 	this.dsc3 = dsc3;
-	
+
 	this.heading = function() {
 		return this.name + ': ' + this.kCal + ' kCal';
 	};
@@ -21,8 +21,8 @@ let notABurger = new Burger('This isn\'t even a burger', '', '', 'I don\'t think
 let meepBurger = new Burger('Meep', 'BREAD', 'MEAT', 'A FAX MACHINE!', '0x1fc', 'https://www.cpsc.gov/s3fs-public/styles/large/public/Recall.2012.12101.12101a.jpg?pgK1xQYak69VAg8LgezAva4ccH2dKZR2&itok=5EWU_eEd', 'After you take away the ', 'and the ', 'What do you have? ');
 let moopBurger = new Burger('Moop', 'POTATO', 'POTATO', 'POTATO', '0', 'https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2014/9/24/1411574454561/03085543-87de-47ab-a4eb-58e7e39d022e-620x372.jpeg?width=300&quality=85&auto=format&fit=max&s=6ff150c2e9d651486fb5eff841979323', 'I say ', 'You say ', 'Javascript is awful by the way ');
 
-console.log(floorBurger.heading());
-console.log(otherBurger.heading());
-console.log(notABurger.heading());
-console.log(meepBurger.heading());
-console.log(moopBurger.heading());
+document.getElementById("burger1").innerHTML = floorBurger.heading();
+document.getElementById("burger2").innerHTML = otherBurger.heading();
+document.getElementById("burger3").innerHTML = notABurger.heading();
+document.getElementById("burger4").innerHTML = meepBurger.heading();
+document.getElementById("burger5").innerHTML = moopBurger.heading();
