@@ -89,7 +89,7 @@ table tr img {
 
 	display:grid;
 	grid-gap:10px;
-	grid-template-columns:32% 32% 32%;
+	grid-template-columns:20% 20% 20% 20% 20%;
 }
 
 .box {
@@ -99,46 +99,33 @@ table tr img {
 	position:relative;
 }
 
-.box img {
+div[class^="box"] img {
 	max-width:95%;
 	max-height:100%;
 }
 
-.00 {
-	grid-column:0;
-	grid-row:0;
+div[class^="box 0"] {
+	grid-row:1;
 }
-.01 {
-	grid-column:1;
-	grid-row:0;
+div[class^="box 1"] {
+	grid-row:2;
 }
-.02 {
-	grid-column:2;
-	grid-row:0;
+div[class^="box 2"] {
+	grid-row:3;
 }
 
-.10 {
-	grid-column:0;
-	grid-row:1;
-}
-.11 {
+div[class$="0"] {
 	grid-column:1;
-	grid-row:1;
 }
-.12 {
+div[class$="1"] {
 	grid-column:2;
-	grid-row:1;
 }
-
-.20 {
-	grid-column:0;
-	grid-row:2;
+div[class$="2"] {
+	grid-column:3;
 }
-.21 {
-	grid-column:1;
-	grid-row:2;
+div[class$="3"] {
+	grid-column:4;
 }
-.22 {
-	grid-column:2;
-	grid-row:2;
+div[class$="4"] {
+	grid-column:5;
 }

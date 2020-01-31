@@ -1,3 +1,4 @@
+/*
 function Burger(name, bread, meat, allergy, kCal, img_path, dsc1, dsc2, dsc3) {
 	this.name = name;
 	this.bread = bread;
@@ -28,4 +29,4 @@ const vm = new Vue({
 	burgers: burgerArray,
   },
 });
-
+*/
