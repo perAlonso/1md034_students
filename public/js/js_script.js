@@ -1,3 +1,24 @@
+let	 orderButton = document.getElementById("order");
+orderButton.addEventListener("click", order);
+
+function order() {
+	info = [document.getElementById("fullName").value];
+	info.push(document.getElementById("email").value);
+	info.push(document.getElementById("street").value);
+	info.push(document.getElementById("house_no").value);
+	info.push(document.getElementById("payment").value);
+	var gender;
+	if(document.getElementById("r0").checked) {
+		info.push(document.getElementById("r0").value);
+	} else if(document.getElementById("r1").checked) {
+		info.push(document.getElementById("r1").value);
+	} else if(document.getElementById("r2").checked) {
+		info.push(document.getElementById("r2").value);
+	}
+	console.log(info);
+}
+
+
 /*
 function Burger(name, bread, meat, allergy, kCal, img_path, dsc1, dsc2, dsc3) {
 	this.name = name;
