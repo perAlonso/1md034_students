@@ -18,7 +18,23 @@
 	  <section id="burger_selection">
 		<h2>Select your burger</h2>
 		<p>This is where you select your scam *cough* sorry, burger...</p>
-		<div class="burger-table" id="menu-table"></div>
+		<div class="burger-table" id="menu-table">
+		  <span v-for="(burger, idx) in burgers">
+			<div v-bind:class="'box 0' + idx">
+			  {{ burger.item.heading() }}
+			</div>
+			<div v-bind:class="'box 1' + idx">
+			  <img :src="burger.item.img_path">
+			</div>
+			<div v-bind:class="'box 2' + idx">
+			  <ul>
+				<li>{{ burger.item.dsc1 }}{{ burger.item.bread }}</li>
+				<li>{{ burger.item.dsc2 }}{{ burger.item.meat }}</li>
+				<li>{{ burger.item.dsc3 }}{{ burger.item.allergy }}</li>
+			  </ul>
+			</div>
+		  </span>
+		</div>
 	  </section>
 
 	  <section id="contact_information">

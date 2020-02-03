@@ -21,7 +21,7 @@ burgerArray.push({item: new Burger('Some other burger', '(soggy and contains glu
 burgerArray.push({item:new Burger('This isn\'t even a burger', '', '', 'I don\'t think that\'s a burger...', '???', 'https://cdn.foodbeast.com/content/uploads/2016/05/Shitty-Food-Porn-1-408x450.jpg', 'Hold on!', 'I though we were selling burgers!!?!?!?', ''), gluten:true, lactose:false});
 burgerArray.push({item: new Burger('Meep', 'BREAD', 'MEAT', 'A FAX MACHINE!', '0x1fc', 'https://www.cpsc.gov/s3fs-public/styles/large/public/Recall.2012.12101.12101a.jpg?pgK1xQYak69VAg8LgezAva4ccH2dKZR2&itok=5EWU_eEd', 'After you take away the ', 'and the ', 'What do you have? '), gluten:false, lactose:true});
 burgerArray.push({item: new Burger('Moop', 'POTATO', 'POTATO', 'POTATO', '0', 'https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2014/9/24/1411574454561/03085543-87de-47ab-a4eb-58e7e39d022e-620x372.jpeg?width=300&quality=85&auto=format&fit=max&s=6ff150c2e9d651486fb5eff841979323', 'I say ', 'You say ', 'Javascript is awful by the way '), gluten:false, lactose:true});
-
+/*
 let menuTable = document.getElementById('menu-table');
 
 for(i = 0; i < burgerArray.length; i++) {
@@ -72,3 +72,4 @@ for(i = 0; i < burgerArray.length; i++) {
 
 	
 }
+*/
