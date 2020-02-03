@@ -28,7 +28,7 @@ burgerArray.push({item: new Burger('Moop', 'POTATO', 'POTATO', 'POTATO', '0', 'h
 const vm = new Vue({
   el: '#burger_selection',
   data: {
-	  burgers: burgerArray,
+	  burgers: food,
   },
 });
 

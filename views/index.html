@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+	<script type="text/javascript" src="js/menu.js"></script>
 	<script src="js/js_script.js" defer></script>
 	<script src="https://vuejs.org/js/vue.js" defer></script>
 	<script src="js/vue_script.js" defer></script>
@@ -21,16 +22,18 @@
 		<div class="burger-table" id="menu-table">
 		  <span v-for="(burger, idx) in burgers">
 			<div v-bind:class="'box 0' + idx">
-			  {{ burger.item.heading() }}
+			  {{ burger.name }}: {{burger.kCal}} kCal
+			  <span v-if="burger.gluten">(g)</span>
+			  <span v-if="burger.lactose">(l)</span>
 			</div>
 			<div v-bind:class="'box 1' + idx">
-			  <img :src="burger.item.img_path">
+			  <img :src="burger.img_path">
 			</div>
 			<div v-bind:class="'box 2' + idx">
 			  <ul>
-				<li>{{ burger.item.dsc1 }}{{ burger.item.bread }}</li>
-				<li>{{ burger.item.dsc2 }}{{ burger.item.meat }}</li>
-				<li>{{ burger.item.dsc3 }}{{ burger.item.allergy }}</li>
+				<li>{{ burger.dsc1 }}{{ burger.bread }}</li>
+				<li>{{ burger.dsc2 }}{{ burger.meat }}</li>
+				<li>{{ burger.dsc3 }}{{ burger.allergy }}</li>
 			  </ul>
 			</div>
 		  </span>
