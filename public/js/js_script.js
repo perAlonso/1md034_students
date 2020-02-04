@@ -1,6 +1,6 @@
-let	 orderButton = document.getElementById("order");
-orderButton.addEventListener("click", order);
-
+/*let	 orderButton = document.getElementById("order");
+orderButton.addEventListener("click", order);*/
+/*
 function order() {
 	info = [document.getElementById("fullName").value];
 	info.push(document.getElementById("email").value);
@@ -18,7 +18,7 @@ function order() {
 	console.log(info);
 }
 
-
+*/
 /*
 function Burger(name, bread, meat, allergy, kCal, img_path, dsc1, dsc2, dsc3) {
 	this.name = name;

@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-	<main>
+	<main id="main">
 	  <header>
 		<h1 class="title">Welcome to Scam-Burgers inc.</h1>
 		<img src="https://external-preview.redd.it/nhVMNtYiaGWYmMZ9xpe7Ly9E572s2Es8XakB4TGGiqc.jpg?s=ab727914cc742cc64e77c42fe31761887cfdde0d" alt="McDaniels, La verdarea hamburguesa Argentina">
@@ -22,6 +22,7 @@
 		<div class="burger-table" id="menu-table">
 		  <span v-for="(burger, idx) in burgers">
 			<div v-bind:class="'box 0' + idx">
+			  <input type="checkbox" v-model="checkedBurgers" v-bind:value="burger.name">
 			  {{ burger.name }}: {{burger.kCal}} kCal
 			  <span v-if="burger.gluten">(g)</span>
 			  <span v-if="burger.lactose">(l)</span>
@@ -46,23 +47,23 @@
 		<section id="contact"><form><fieldset>
 			  <p>
 				<label for="fullName">Full name</label><br>
-				<input type="text" id="fullName" name="fn" required="required" placeholder="First and last name" />
+				<input v-model="name" type="text" id="fullName" name="fn" required="required" placeholder="First and last name" />
 			  </p>
 			  <p>
 				<label for="email">E-mail</label><br>
-				<input type="email" id="email" name="ml" placeholder="E-mail address" />
+				<input v-model="email" type="email" id="email" name="ml" placeholder="E-mail address" />
 			  </p>
 			  <p>
 				<label for="street">Street name</label><br>
-				<input type="text" id="street" name="st" required="required" placeholder="Street name" />
+				<input v-model="street" type="text" id="street" name="st" required="required" placeholder="Street name" />
 			  </p>
 			  <p>
 				<label for="house_no">House number</label><br>
-				<input type="number" id="house_no" name="no" required="required" placeholder="House number" />
+				<input v-model="house_number" type="number" id="house_no" name="no" required="required" placeholder="House number" />
 			  </p>
 			  <p>
 				<label for="payment">Payment method</label><br />
-				<select id="payment" name="pay">
+				<select v-model="payment" id="payment" name="pay">
 				  <option>Offshore account no.1</option>
 				  <option selected="selected">Western union</option>
 				  <option>Cash hidden in a tree of your choice</option>
@@ -71,13 +72,22 @@
 			  </p>
 			  <p>
 				<label for="gender">Gender</label><br />
-				<input id="r0" type="radio" name="gender" value="dude">Dude<br>
-				<input id="r1" type="radio" name="gender" value="dudette">Dudette<br>
-				<input id="r2" type="radio" name="gender" value="na" checked>N/A<br>
+				<input v-model="gender" id="r0" type="radio" name="gender" value="dude">Dude<br>
+				<input v-model="gender" id="r1" type="radio" name="gender" value="dudette">Dudette<br>
+				<input v-model="gender" id="r2" type="radio" name="gender" value="na" checked>N/A<br>
 			  </p>
 		</fieldset></form></section>
 	  </section>
-	  <p><button type="submit" id="order"><img src="https://docs.toradex.com/102745-blue-tick-mark-reverse.png">Submit ;)</button></p>
+	  <p id="orders"><button v-on:click="markDone()" type="submit" id="order"><img src="https://docs.toradex.com/102745-blue-tick-mark-reverse.png">Submit ;)</button></p>
+	  <p v-if="submitted">
+		Name: {{ name }}<br>
+		E-mail: {{ email }}<br>
+		Street: {{ street }}<br>
+		House number: {{ house_number }}<br>
+		Payment: {{ payment }}<br>
+		Gender: {{ gender }}<br>
+		Burgers: {{ checkedBurgers }}<br>
+	  </p>
 	</main>
 
 	<footer>

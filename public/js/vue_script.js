@@ -24,11 +24,33 @@ burgerArray.push({item: new Burger('Meep', 'BREAD', 'MEAT', 'A FAX MACHINE!', '0
 burgerArray.push({item: new Burger('Moop', 'POTATO', 'POTATO', 'POTATO', '0', 'https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2014/9/24/1411574454561/03085543-87de-47ab-a4eb-58e7e39d022e-620x372.jpeg?width=300&quality=85&auto=format&fit=max&s=6ff150c2e9d651486fb5eff841979323', 'I say ', 'You say ', 'Javascript is awful by the way '), gluten:false, lactose:true});
 */
 
-
 const vm = new Vue({
-  el: '#burger_selection',
-  data: {
-	  burgers: food,
-  },
-});
+	el: '#main',
+	data: {
+		burgers: food,
+		name: undefined,
+		email: undefined,
+		street: undefined,
+		house_number: undefined,
+		payment: "Western union",
+		gender: "na",
+		contactInfo: [],
+		checkedBurgers: [],
+		submitted: false
+	},
+	methods: {
+		markDone: function() {
+			this.contactInfo = [];
+			this.contactInfo.push(this.name);
+			this.contactInfo.push(this.email);
+			this.contactInfo.push(this.street);
+			this.contactInfo.push(this.house_number);
+			this.contactInfo.push(this.payment);
+			this.contactInfo.push(this.gender);
+			
 
+			this.submitted = true;
+		}
+	}
+});
+	  
