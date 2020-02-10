@@ -129,3 +129,13 @@ div[class$="3"] {
 div[class$="4"] {
 	grid-column:5;
 }
+#dots {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background: url(/img/polacks.jpg);
+	background-repeat: no-repeat;
+	width:1000px;
+	height:561px;
+	cursor: crosshair;
+}

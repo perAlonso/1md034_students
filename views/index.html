@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+	<script src="/socket.io/socket.io.js" defer></script>
 	<script type="text/javascript" src="js/menu.js"></script>
 	<script src="js/js_script.js" defer></script>
 	<script src="https://vuejs.org/js/vue.js" defer></script>
@@ -54,16 +55,8 @@
 				<input v-model="email" type="email" id="email" name="ml" placeholder="E-mail address" />
 			  </p>
 			  <p>
-				<label for="street">Street name</label><br>
-				<input v-model="street" type="text" id="street" name="st" required="required" placeholder="Street name" />
-			  </p>
-			  <p>
-				<label for="house_no">House number</label><br>
-				<input v-model="house_number" type="number" id="house_no" name="no" required="required" placeholder="House number" />
-			  </p>
-			  <p>
-				<label for="payment">Payment method</label><br />
-				<select v-model="payment" id="payment" name="pay">
+			    <label for="payment">Payment method</label><br />
+			    <select v-model="payment" id="payment" name="pay">
 				  <option>Offshore account no.1</option>
 				  <option selected="selected">Western union</option>
 				  <option>Cash hidden in a tree of your choice</option>
@@ -76,6 +69,15 @@
 				<input v-model="gender" id="r1" type="radio" name="gender" value="dudette">Dudette<br>
 				<input v-model="gender" id="r2" type="radio" name="gender" value="na" checked>N/A<br>
 			  </p>
+			  <div class="view-box">
+			    <div id="dots" v-on:click="addOrder">
+			      <div 
+				v-for="(order, key) in orders"
+				v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+				{{key}}
+			      </div>
+			    </div>
+			  </div>
 		</fieldset></form></section>
 	  </section>
 	  <p id="orders"><button v-on:click="markDone()" type="submit" id="order"><img src="https://docs.toradex.com/102745-blue-tick-mark-reverse.png">Submit ;)</button></p>

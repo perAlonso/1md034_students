@@ -26,34 +26,34 @@ const vm = new Vue({
       this.orders = data.orders;
     }.bind(this));
   },
-  methods: {
-    getNext: function() {
-      /* This function returns the next available key (order number) in
-       * the orders object, it works under the assumptions that all keys
-       * are integers. */
-      let lastOrder = Object.keys(this.orders).reduce(function(last, next) {
-        return Math.max(last, next);
-      }, 0);
-      return lastOrder + 1;
+    methods: {
+	getNext: function() {
+	    /* This function returns the next available key (order number) in
+	     * the orders object, it works under the assumptions that all keys
+	     * are integers. */
+	    let lastOrder = Object.keys(this.orders).reduce(function(last, next) {
+		return Math.max(last, next);
+	    }, 0);
+	    return lastOrder + 1;
+	},
+	addOrder: function(event) {
+	    /* When you click in the map, a click event object is sent as parameter
+	     * to the function designated in v-on:click (i.e. this one).
+	     * The click event object contains among other things different
+	     * coordinates that we need when calculating where in the map the click
+	     * actually happened. */
+	    let offset = {
+		x: event.currentTarget.getBoundingClientRect().left,
+		y: event.currentTarget.getBoundingClientRect().top,
+	    };
+	    socket.emit('addOrder', {
+		orderId: this.getNext(),
+		details: {
+		    x: event.clientX - 10 - offset.x,
+		    y: event.clientY - 10 - offset.y,
+		},
+		orderItems: ['Beans', 'Curry'],
+	    });
+	},
     },
-    addOrder: function(event) {
-      /* When you click in the map, a click event object is sent as parameter
-       * to the function designated in v-on:click (i.e. this one).
-       * The click event object contains among other things different
-       * coordinates that we need when calculating where in the map the click
-       * actually happened. */
-      let offset = {
-        x: event.currentTarget.getBoundingClientRect().left,
-        y: event.currentTarget.getBoundingClientRect().top,
-      };
-      socket.emit('addOrder', {
-        orderId: this.getNext(),
-        details: {
-          x: event.clientX - 10 - offset.x,
-          y: event.clientY - 10 - offset.y,
-        },
-        orderItems: ['Beans', 'Curry'],
-      });
-    },
-  },
 });
