@@ -17,16 +17,14 @@ const vm = new Vue({
 	contactInfo: [],
 	checkedBurgers: [],
 	submitted: false,
-	orders: {}
-    },
-    created: function() {
-	socket.on('initialize', function(data) {
-	    this.orders = data.orders;
-	}.bind(this));
-	
-	socket.on('currentQueue', function(data) {
-	    this.orders = data.orders;
-	}.bind(this));
+	mapClicked: false,
+	order: {
+	    details: {
+		x: 0,
+		y: 0},
+	    contact
+	},
+	currentOrderId: 0
     },
     methods: {
 	markDone: function() {
@@ -46,19 +44,31 @@ const vm = new Vue({
 	    return lastOrder + 1;
 	},
 	addOrder: function(event) {
+	    this.markDone();
+	    this.order.contact = this.contactInfo;
+
+	    if(!this.mapClicked) {
+		alert("You need to select a delivery location");
+		return;
+	    }
+	    
+	    socket.emit('addOrder', {
+		orderId: this.currentOrderId++,
+		details: this.order.details,
+		orderItems: this.checkedBurgers,
+	    });
+	},
+	displayOrder: function(event) {
 	    console.log(event);
+	    this.mapClicked = true;
 	    let offset = {
 		x: event.currentTarget.getBoundingClientRect().left,
 		y: event.currentTarget.getBoundingClientRect().top,
 	    };
-	    socket.emit('addOrder', {
-		orderId: this.getNext(),
-		details: {
-		    x: event.clientX - 10 - offset.x,
-		    y: event.clientY - 10 - offset.y,
-		},
-		orderItems: ['Beans', 'Curry'],
-	    });
+	    this.order.details = {
+		x: event.clientX - 10 - offset.x,
+		y: event.clientY - 10 - offset.y
+	    }
 	},
     }
 });
