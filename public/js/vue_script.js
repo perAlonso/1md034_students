@@ -56,6 +56,7 @@ const vm = new Vue({
 		orderId: this.currentOrderId++,
 		details: this.order.details,
 		orderItems: this.checkedBurgers,
+		contact: this.contactInfo,
 	    });
 	},
 	displayOrder: function(event) {
